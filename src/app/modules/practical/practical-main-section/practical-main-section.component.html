@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="card p-3 shadow mt-5">
+        <h2 class="text-center p-3">Practical Demo</h2>
+        <nav>
+            <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="TableView" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Table View</button>
+                <button class="nav-link" id="ColumnView" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Column View</button>
+            </div>
+        </nav>
+        <div class="tab-content p-3 border bg-light" id="nav-tabContent">
+            <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="TableView">
+                <app-table-info [dataSource]="dataSource"></app-table-info>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="ColumnView">
+                <app-column-info [dataSource]="dataSource" (submitEvent)="submitEvent($event)">
+                </app-column-info>
+            </div>
+        </div>
+    </div>
+</div>

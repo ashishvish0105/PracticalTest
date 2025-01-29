@@ -1,0 +1,51 @@
+<div class="container">
+
+    <div class="column-info">
+        <ul class="date-Column-Info">
+            @for (item of dataSource; track $index) {
+            <li class="date-item" (click)="loadDataForm(item)" appActiveTab #appActiveTab>{{ item.samplingTime| date:'dd/MM/yyyy hh:mm:ss aa' }}</li>
+            } @empty {
+            <li class="date-item">No Data found</li>
+            }
+        </ul>
+        <div class="form-Column-Info">
+            <form [formGroup]="formData">
+                <div class="form-group mb-3">
+                    <label for="projectName" class="form-label">Project Name:</label>
+                    <input type="text" formControlName="projectName" class="form-control" id="projectName">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="constructionCount" class="form-label">Construction Count:</label>
+                    <div class="input-with-couterBtn">
+                        <input type="text" formControlName="constructionCount" (keypress)="validateNumber($event)" #constructionCountInput class="form-control" id="constructionCount">
+                        <div class="couterButton">
+                            <button class="iconBtn top-btn" (click)="constructionCountEvent('up',constructionCountInput)">&#x2BC5;</button>
+                            <button class="iconBtn buttom-btn" (click)="constructionCountEvent('down',constructionCountInput)">&#11206;</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group mb-3">
+                    <label for="isCompleted" class="form-label">Is Construction Completed:</label>
+                    <input type="checkbox" formControlName="isCompleted" class="form-check-input" id="isCompleted">
+                </div>
+                <div class="form-group mb-3 ">
+                    <label for="lengthOfRoad " class="form-label ">Length of the road:</label>
+                    <div class="input-with-couterBtn">
+                        <input type="text" formControlName="lengthOfRoad" (keypress)="validateNumber($event)" #lengthOfRoadInput class="form-control" id="lengthOfRoad">
+                        <div class="couterButtonWithText">
+                            <div class="couterButton-group">
+                                <button class="iconBtn top-btn" (click)="lengthOfRoadEvent('up',lengthOfRoadInput)">&#x2BC5;</button>
+                                <button class="iconBtn buttom-btn" (click)="lengthOfRoadEvent('down',lengthOfRoadInput)">&#11206;</button>
+                            </div>
+                            <span class="buttonWithText">kg</span>
+                        </div>
+
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</div>

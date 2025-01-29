@@ -1,0 +1,79 @@
+$borderColor:#dee2e6;
+.column-info {
+    border: 1px solid $borderColor;
+    display: flex;
+    .date-Column-Info {
+        border-right: 1px solid $borderColor;
+        list-style: none;
+        width: 25%;
+        margin-bottom: 0;
+        padding: 0;
+        .date-item {
+            border-bottom: 1px solid $borderColor;
+            padding: 15px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    .form-Column-Info {
+        width: 75%;
+        padding: 30px;
+        .form-group {
+            display: flex;
+            align-items: center;
+            .form-label {
+                min-width: 300px;
+                width: 25%;
+                margin-bottom: 0;
+                line-height: 50px;
+            }
+            .form-control {
+                height: 50px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.input-with-couterBtn {
+    position: relative;
+    width: 100%;
+    .couterButton,
+    .couterButtonWithText {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 4px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+    }
+    input {
+        padding-right: 75px;
+        width: 100%;
+    }
+    button.iconBtn {
+        border: none;
+        min-height: 14px;
+        background: gray;
+        line-height: 14px;
+        border-radius: 4px;
+    }
+}
+
+.couterButtonWithText {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 15px;
+    .couterButton-group {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .buttonWithText {
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+}

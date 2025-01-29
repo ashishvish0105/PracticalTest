@@ -1,0 +1,23 @@
+<table class="table rounded overflow-hidden">
+    <thead>
+        <tr class="table-primary">
+            <th scope="col">Sampling Time</th>
+            <th scope="col">Project Name</th>
+            <th scope="col">Construction Count</th>
+            <th scope="col">Is Construction Completed</th>
+            <th scope="col">Length of the road</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of dataSource; track $index) {
+        <tr>
+            <td>{{ item.samplingTime | date:'dd/MM/yyyy hh:mm:ss aa' }}</td>
+            <td>{{ item.projectName }}</td>
+            <td>{{ item.constructionCount }}</td>
+            <td>{{ item.isCompleted?item.isCompleted:"false"}}</td>
+            <td>{{ item.lengthOfRoad }}</td>
+        </tr>
+        }
+    </tbody>
+</table>
